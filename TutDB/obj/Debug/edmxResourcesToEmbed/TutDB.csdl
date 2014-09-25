@@ -1,0 +1,279 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TutDBModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="TutDBEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="sysdiagrams" EntityType="TutDBModel.sysdiagram" />
+    <EntitySet Name="tblBatchCourses" EntityType="TutDBModel.tblBatchCourse" />
+    <EntitySet Name="tblBatchMasters" EntityType="TutDBModel.tblBatchMaster" />
+    <EntitySet Name="tblCityMasters" EntityType="TutDBModel.tblCityMaster" />
+    <EntitySet Name="tblCourseMasters" EntityType="TutDBModel.tblCourseMaster" />
+    <EntitySet Name="tblFeesDetails" EntityType="TutDBModel.tblFeesDetail" />
+    <EntitySet Name="tblFeesMasters" EntityType="TutDBModel.tblFeesMaster" />
+    <EntitySet Name="tblGenderMasters" EntityType="TutDBModel.tblGenderMaster" />
+    <EntitySet Name="tblStudentDetails" EntityType="TutDBModel.tblStudentDetail" />
+    <AssociationSet Name="FK_tblBatchCourse_tblBatchMaster" Association="TutDBModel.FK_tblBatchCourse_tblBatchMaster">
+      <End Role="tblBatchMaster" EntitySet="tblBatchMasters" />
+      <End Role="tblBatchCourse" EntitySet="tblBatchCourses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblBatchCourse_tblCourseMaster" Association="TutDBModel.FK_tblBatchCourse_tblCourseMaster">
+      <End Role="tblCourseMaster" EntitySet="tblCourseMasters" />
+      <End Role="tblBatchCourse" EntitySet="tblBatchCourses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblStudentDetails_tblBatchMaster" Association="TutDBModel.FK_tblStudentDetails_tblBatchMaster">
+      <End Role="tblBatchMaster" EntitySet="tblBatchMasters" />
+      <End Role="tblStudentDetails" EntitySet="tblStudentDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblStudentDetails_tblCityMaster" Association="TutDBModel.FK_tblStudentDetails_tblCityMaster">
+      <End Role="tblCityMaster" EntitySet="tblCityMasters" />
+      <End Role="tblStudentDetails" EntitySet="tblStudentDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblFeesMaster_tblCourseMaster" Association="TutDBModel.FK_tblFeesMaster_tblCourseMaster">
+      <End Role="tblCourseMaster" EntitySet="tblCourseMasters" />
+      <End Role="tblFeesMaster" EntitySet="tblFeesMasters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblStudentDetails_tblCourseMaster" Association="TutDBModel.FK_tblStudentDetails_tblCourseMaster">
+      <End Role="tblCourseMaster" EntitySet="tblCourseMasters" />
+      <End Role="tblStudentDetails" EntitySet="tblStudentDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblFeesDetails_tblStudentDetails" Association="TutDBModel.FK_tblFeesDetails_tblStudentDetails">
+      <End Role="tblStudentDetails" EntitySet="tblStudentDetails" />
+      <End Role="tblFeesDetails" EntitySet="tblFeesDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblStudentDetails_tblGenderMaster" Association="TutDBModel.FK_tblStudentDetails_tblGenderMaster">
+      <End Role="tblGenderMaster" EntitySet="tblGenderMasters" />
+      <End Role="tblStudentDetails" EntitySet="tblStudentDetails" />
+    </AssociationSet>
+  </EntityContainer>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tblBatchCourse">
+    <Key>
+      <PropertyRef Name="BatchCourseId" />
+    </Key>
+    <Property Name="BatchCourseId" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="CourseId" Type="Int64" />
+    <Property Name="BatchId" Type="Int64" />
+    <Property Name="isActive" Type="Int64" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tblBatchMaster" Relationship="TutDBModel.FK_tblBatchCourse_tblBatchMaster" FromRole="tblBatchCourse" ToRole="tblBatchMaster" />
+    <NavigationProperty Name="tblCourseMaster" Relationship="TutDBModel.FK_tblBatchCourse_tblCourseMaster" FromRole="tblBatchCourse" ToRole="tblCourseMaster" />
+  </EntityType>
+  <EntityType Name="tblBatchMaster">
+    <Key>
+      <PropertyRef Name="BatchId" />
+    </Key>
+    <Property Name="BatchId" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="BatchCode" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="BatchName" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="isActive" Type="Int64" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tblBatchCourses" Relationship="TutDBModel.FK_tblBatchCourse_tblBatchMaster" FromRole="tblBatchMaster" ToRole="tblBatchCourse" />
+    <NavigationProperty Name="tblStudentDetails" Relationship="TutDBModel.FK_tblStudentDetails_tblBatchMaster" FromRole="tblBatchMaster" ToRole="tblStudentDetails" />
+  </EntityType>
+  <EntityType Name="tblCityMaster">
+    <Key>
+      <PropertyRef Name="CityId" />
+    </Key>
+    <Property Name="CityId" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="CityName" Type="Int64" />
+    <Property Name="isActive" Type="Int64" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tblStudentDetails" Relationship="TutDBModel.FK_tblStudentDetails_tblCityMaster" FromRole="tblCityMaster" ToRole="tblStudentDetails" />
+  </EntityType>
+  <EntityType Name="tblCourseMaster">
+    <Key>
+      <PropertyRef Name="CourseId" />
+    </Key>
+    <Property Name="CourseId" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="CourseCode" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="CourseName" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="isActive" Type="Int64" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tblBatchCourses" Relationship="TutDBModel.FK_tblBatchCourse_tblCourseMaster" FromRole="tblCourseMaster" ToRole="tblBatchCourse" />
+    <NavigationProperty Name="tblFeesMasters" Relationship="TutDBModel.FK_tblFeesMaster_tblCourseMaster" FromRole="tblCourseMaster" ToRole="tblFeesMaster" />
+    <NavigationProperty Name="tblStudentDetails" Relationship="TutDBModel.FK_tblStudentDetails_tblCourseMaster" FromRole="tblCourseMaster" ToRole="tblStudentDetails" />
+  </EntityType>
+  <EntityType Name="tblFeesDetail">
+    <Key>
+      <PropertyRef Name="RecordId" />
+    </Key>
+    <Property Name="RecordId" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="FeeReceiptNo" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="StudentId" Type="Int64" />
+    <Property Name="AmountToBePaid" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="AmountPaid" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="ActualFees" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="ServiceTax" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="OtherTax" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="PaidTimeStamp" Type="DateTime" Precision="3" />
+    <Property Name="Balance" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Advance" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="isActive" Type="Int64" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tblStudentDetail" Relationship="TutDBModel.FK_tblFeesDetails_tblStudentDetails" FromRole="tblFeesDetails" ToRole="tblStudentDetails" />
+  </EntityType>
+  <EntityType Name="tblFeesMaster">
+    <Key>
+      <PropertyRef Name="FeeRecordId" />
+    </Key>
+    <Property Name="FeeRecordId" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="CourseId" Type="Int64" />
+    <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="isActive" Type="Int64" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tblCourseMaster" Relationship="TutDBModel.FK_tblFeesMaster_tblCourseMaster" FromRole="tblFeesMaster" ToRole="tblCourseMaster" />
+  </EntityType>
+  <EntityType Name="tblGenderMaster">
+    <Key>
+      <PropertyRef Name="GenderId" />
+    </Key>
+    <Property Name="GenderId" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="isActive" Type="Int64" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tblStudentDetails" Relationship="TutDBModel.FK_tblStudentDetails_tblGenderMaster" FromRole="tblGenderMaster" ToRole="tblStudentDetails" />
+  </EntityType>
+  <EntityType Name="tblStudentDetail">
+    <Key>
+      <PropertyRef Name="StudentId" />
+    </Key>
+    <Property Name="StudentId" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="MiddleName" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="LastName" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="FatherName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="MotherName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="DOB" Type="DateTime" Precision="0" />
+    <Property Name="Sex" Type="Int64" />
+    <Property Name="Address1" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Address2" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="CityId" Type="Int64" />
+    <Property Name="Dpic" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="isActive" Type="Int64" />
+    <Property Name="CourseId" Type="Int64" />
+    <Property Name="BatchId" Type="Int64" />
+    <Property Name="LastQualificaton" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="LastQualificationScore" Type="Int32" />
+    <Property Name="AdmitDate" Type="DateTime" Precision="3" />
+    <Property Name="FeesId" Type="Int64" />
+    <Property Name="Discount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Deposit" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tblBatchMaster" Relationship="TutDBModel.FK_tblStudentDetails_tblBatchMaster" FromRole="tblStudentDetails" ToRole="tblBatchMaster" />
+    <NavigationProperty Name="tblCityMaster" Relationship="TutDBModel.FK_tblStudentDetails_tblCityMaster" FromRole="tblStudentDetails" ToRole="tblCityMaster" />
+    <NavigationProperty Name="tblCourseMaster" Relationship="TutDBModel.FK_tblStudentDetails_tblCourseMaster" FromRole="tblStudentDetails" ToRole="tblCourseMaster" />
+    <NavigationProperty Name="tblFeesDetails" Relationship="TutDBModel.FK_tblFeesDetails_tblStudentDetails" FromRole="tblStudentDetails" ToRole="tblFeesDetails" />
+    <NavigationProperty Name="tblGenderMaster" Relationship="TutDBModel.FK_tblStudentDetails_tblGenderMaster" FromRole="tblStudentDetails" ToRole="tblGenderMaster" />
+  </EntityType>
+  <Association Name="FK_tblBatchCourse_tblBatchMaster">
+    <End Role="tblBatchMaster" Type="TutDBModel.tblBatchMaster" Multiplicity="0..1" />
+    <End Role="tblBatchCourse" Type="TutDBModel.tblBatchCourse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBatchMaster">
+        <PropertyRef Name="BatchId" />
+      </Principal>
+      <Dependent Role="tblBatchCourse">
+        <PropertyRef Name="BatchId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblBatchCourse_tblCourseMaster">
+    <End Role="tblCourseMaster" Type="TutDBModel.tblCourseMaster" Multiplicity="0..1" />
+    <End Role="tblBatchCourse" Type="TutDBModel.tblBatchCourse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCourseMaster">
+        <PropertyRef Name="CourseId" />
+      </Principal>
+      <Dependent Role="tblBatchCourse">
+        <PropertyRef Name="CourseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblStudentDetails_tblBatchMaster">
+    <End Role="tblBatchMaster" Type="TutDBModel.tblBatchMaster" Multiplicity="0..1" />
+    <End Role="tblStudentDetails" Type="TutDBModel.tblStudentDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBatchMaster">
+        <PropertyRef Name="BatchId" />
+      </Principal>
+      <Dependent Role="tblStudentDetails">
+        <PropertyRef Name="BatchId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblStudentDetails_tblCityMaster">
+    <End Role="tblCityMaster" Type="TutDBModel.tblCityMaster" Multiplicity="0..1" />
+    <End Role="tblStudentDetails" Type="TutDBModel.tblStudentDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCityMaster">
+        <PropertyRef Name="CityId" />
+      </Principal>
+      <Dependent Role="tblStudentDetails">
+        <PropertyRef Name="CityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblFeesMaster_tblCourseMaster">
+    <End Role="tblCourseMaster" Type="TutDBModel.tblCourseMaster" Multiplicity="0..1" />
+    <End Role="tblFeesMaster" Type="TutDBModel.tblFeesMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCourseMaster">
+        <PropertyRef Name="CourseId" />
+      </Principal>
+      <Dependent Role="tblFeesMaster">
+        <PropertyRef Name="CourseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblStudentDetails_tblCourseMaster">
+    <End Role="tblCourseMaster" Type="TutDBModel.tblCourseMaster" Multiplicity="0..1" />
+    <End Role="tblStudentDetails" Type="TutDBModel.tblStudentDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCourseMaster">
+        <PropertyRef Name="CourseId" />
+      </Principal>
+      <Dependent Role="tblStudentDetails">
+        <PropertyRef Name="CourseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblFeesDetails_tblStudentDetails">
+    <End Role="tblStudentDetails" Type="TutDBModel.tblStudentDetail" Multiplicity="0..1" />
+    <End Role="tblFeesDetails" Type="TutDBModel.tblFeesDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblStudentDetails">
+        <PropertyRef Name="StudentId" />
+      </Principal>
+      <Dependent Role="tblFeesDetails">
+        <PropertyRef Name="StudentId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblStudentDetails_tblGenderMaster">
+    <End Role="tblGenderMaster" Type="TutDBModel.tblGenderMaster" Multiplicity="0..1" />
+    <End Role="tblStudentDetails" Type="TutDBModel.tblStudentDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblGenderMaster">
+        <PropertyRef Name="GenderId" />
+      </Principal>
+      <Dependent Role="tblStudentDetails">
+        <PropertyRef Name="Sex" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+</Schema>

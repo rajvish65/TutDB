@@ -1,0 +1,68 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TutDBModel1" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityContainer Name="TutDBEntities33" p1:LazyLoadingEnabled="true">
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_createInstallment">
+      <Parameter Name="studentId" Mode="In" Type="Int32" />
+      <Parameter Name="installmentNo" Mode="In" Type="Int32" />
+      <Parameter Name="payPattern" Mode="In" Type="Int32" />
+      <Parameter Name="payInterval" Mode="In" Type="Int32" />
+      <Parameter Name="preferredDate" Mode="In" Type="DateTime" />
+      <Parameter Name="preferredAmount" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="sp_createSessionActivityDaily">
+      <Parameter Name="dateFrom" Mode="In" Type="DateTime" />
+      <Parameter Name="dateTo" Mode="In" Type="DateTime" />
+      <Parameter Name="startTime" Mode="In" Type="Time" />
+      <Parameter Name="endTime" Mode="In" Type="Time" />
+      <Parameter Name="sessionId" Mode="In" Type="Int32" />
+      <Parameter Name="courseId" Mode="In" Type="Int32" />
+      <Parameter Name="batchId" Mode="In" Type="Int32" />
+      <Parameter Name="subjectId" Mode="In" Type="Int32" />
+      <Parameter Name="taskId" Mode="In" Type="Int32" />
+      <Parameter Name="locationId" Mode="In" Type="Int32" />
+      <Parameter Name="roomId" Mode="In" Type="Int32" />
+      <Parameter Name="duration" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(TutDBModel1.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(TutDBModel1.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+</Schema>

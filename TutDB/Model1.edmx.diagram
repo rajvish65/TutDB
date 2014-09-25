@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="1f35b505558941d283fee680d2fcaf4d" Name="Diagram1" ZoomLevel="71">
+        <EntityTypeShape EntityType="TutDBModel.sysdiagram" Width="1.5" PointX="7.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TutDBModel.tblBasicMaster" Width="1.5" PointX="9.75" PointY="2.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TutDBModel.tblBatchCourse" Width="1.5" PointX="3" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TutDBModel.tblBatchMaster" Width="1.5" PointX="0.75" PointY="11.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TutDBModel.tblCityMaster" Width="1.5" PointX="0.75" PointY="6.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TutDBModel.tblCourseMaster" Width="1.5" PointX="0.75" PointY="15.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TutDBModel.tblCourseSubjectMapping" Width="1.5" PointX="6" PointY="15.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TutDBModel.tblEmployeeDetail" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TutDBModel.tblFeesDetail" Width="1.5" PointX="8.25" PointY="7.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="TutDBModel.tblFeesMaster" Width="1.5" PointX="3" PointY="22.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TutDBModel.tblFeeStructure" Width="1.5" PointX="8.25" PointY="12.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TutDBModel.tblGenderMaster" Width="1.5" PointX="0.75" PointY="3" IsExpanded="true" />
+        <EntityTypeShape EntityType="TutDBModel.tblLocationMaster" Width="1.5" PointX="0.75" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TutDBModel.tblLocationRoomMapping" Width="1.5" PointX="6" PointY="23.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TutDBModel.tblRoomMaster" Width="1.5" PointX="0.75" PointY="23.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="TutDBModel.tblSessionActivity" Width="1.5" PointX="3" PointY="7.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TutDBModel.tblSessionMaster" Width="1.5" PointX="0.75" PointY="26.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TutDBModel.tblStaffAttendance" Width="1.5" PointX="5.25" PointY="4.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="TutDBModel.tblStudentAllocation" Width="1.5" PointX="6" PointY="9" IsExpanded="true" />
+        <EntityTypeShape EntityType="TutDBModel.tblStudentAttendance" Width="1.5" PointX="11.25" PointY="9.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="TutDBModel.tblStudentDetail" Width="1.5" PointX="3.75" PointY="25.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="TutDBModel.tblSubjectEmployeeMapping" Width="1.5" PointX="5.25" PointY="19.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="TutDBModel.tblSubjectMaster" Width="1.5" PointX="1.5" PointY="34.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="TutDBModel.tblTaskMaster" Width="1.5" PointX="0.75" PointY="30.25" IsExpanded="true" />
+        <AssociationConnector Association="TutDBModel.FK_tblBatchCourse_tblBatchMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="TutDBModel.FK_tblBatchCourse_tblCourseMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="TutDBModel.FK_tblSessionActivity_tblBatchMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="TutDBModel.FK_tblStudentAllocation_tblBatchMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="TutDBModel.FK_tblEmployeeDetails_tblCityMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="TutDBModel.FK_tblStudentDetails_tblCityMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="TutDBModel.FK_tblCourseSubjectMapping_tblCourseMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="TutDBModel.FK_tblFeesMaster_tblCourseMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="TutDBModel.FK_tblSessionActivity_tblCourseMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="TutDBModel.FK_tblStudentAllocation_tblCourseMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="TutDBModel.FK_tblCourseSubjectMapping_tblSubjectMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="TutDBModel.FK_tblEmployeeDetails_tblGederMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="TutDBModel.FK_tblStaffAttendance_tblEmployeeDetails" ManuallyRouted="false" />
+        <AssociationConnector Association="TutDBModel.FK_tblSubjectEmployeeMapping_tblEmployeeDetails" ManuallyRouted="false" />
+        <AssociationConnector Association="TutDBModel.FK_tblFeesDetails_tblStudentAllocation" ManuallyRouted="false" />
+        <AssociationConnector Association="TutDBModel.FK_tblFeeStructure_tblStudentAllocation" ManuallyRouted="false" />
+        <AssociationConnector Association="TutDBModel.FK_tblStudentDetails_tblGenderMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="TutDBModel.FK_tblLocationRoomMapping_tblLocationMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="TutDBModel.FK_tblSessionActivity_tblLocationMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="TutDBModel.FK_tblLocationRoomMapping_tblRoomMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="TutDBModel.FK_tblSessionActivity_tblRoomMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="TutDBModel.FK_tblSessionActivity_tblSessionMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="TutDBModel.FK_tblSessionActivity_tblTaskMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="TutDBModel.FK_tblStaffAttendance_tblSessionActivity" ManuallyRouted="false" />
+        <AssociationConnector Association="TutDBModel.FK_tblStudentAttendance_tblSessionActivity" ManuallyRouted="false" />
+        <AssociationConnector Association="TutDBModel.FK_tblStudentAllocation_tblStudentDetails" ManuallyRouted="false" />
+        <AssociationConnector Association="TutDBModel.FK_tblStudentAttendance_tblStudentAllocation" ManuallyRouted="false" />
+        <AssociationConnector Association="TutDBModel.FK_tblSubjectEmployeeMapping_tblSubjectMaster" ManuallyRouted="false" />
+        <AssociationConnector Association="TutDBModel.FK_tblTaskMaster_tblSubjectMaster" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

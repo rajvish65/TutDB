@@ -1,0 +1,1045 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="TutDBModel" Alias="Self" p1:UseStrongSpatialTypes="false" xmlns="http://schemas.microsoft.com/ado/2009/11/edm" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:p1="http://schemas.microsoft.com/ado/2009/02/edm/annotation">
+  <EntityContainer Name="TutDBEntities" p1:LazyLoadingEnabled="true">
+    <EntitySet Name="sysdiagrams" EntityType="TutDBModel.sysdiagram" />
+    <EntitySet Name="tblBasicMasters" EntityType="TutDBModel.tblBasicMaster" />
+    <EntitySet Name="tblBatchCourses" EntityType="TutDBModel.tblBatchCourse" />
+    <EntitySet Name="tblBatchMasters" EntityType="TutDBModel.tblBatchMaster" />
+    <EntitySet Name="tblCityMasters" EntityType="TutDBModel.tblCityMaster" />
+    <EntitySet Name="tblCourseMasters" EntityType="TutDBModel.tblCourseMaster" />
+    <EntitySet Name="tblCourseSubjectMappings" EntityType="TutDBModel.tblCourseSubjectMapping" />
+    <EntitySet Name="tblEmployeeDetails" EntityType="TutDBModel.tblEmployeeDetail" />
+    <EntitySet Name="tblFeesDetails" EntityType="TutDBModel.tblFeesDetail" />
+    <EntitySet Name="tblFeesMasters" EntityType="TutDBModel.tblFeesMaster" />
+    <EntitySet Name="tblFeeStructures" EntityType="TutDBModel.tblFeeStructure" />
+    <EntitySet Name="tblGenderMasters" EntityType="TutDBModel.tblGenderMaster" />
+    <EntitySet Name="tblLocationMasters" EntityType="TutDBModel.tblLocationMaster" />
+    <EntitySet Name="tblLocationRoomMappings" EntityType="TutDBModel.tblLocationRoomMapping" />
+    <EntitySet Name="tblRoomMasters" EntityType="TutDBModel.tblRoomMaster" />
+    <EntitySet Name="tblSessionActivities" EntityType="TutDBModel.tblSessionActivity" />
+    <EntitySet Name="tblSessionMasters" EntityType="TutDBModel.tblSessionMaster" />
+    <EntitySet Name="tblStaffAttendances" EntityType="TutDBModel.tblStaffAttendance" />
+    <EntitySet Name="tblStudentAllocations" EntityType="TutDBModel.tblStudentAllocation" />
+    <EntitySet Name="tblStudentAttendances" EntityType="TutDBModel.tblStudentAttendance" />
+    <EntitySet Name="tblStudentDetails" EntityType="TutDBModel.tblStudentDetail" />
+    <EntitySet Name="tblSubjectEmployeeMappings" EntityType="TutDBModel.tblSubjectEmployeeMapping" />
+    <EntitySet Name="tblSubjectMasters" EntityType="TutDBModel.tblSubjectMaster" />
+    <EntitySet Name="tblTaskMasters" EntityType="TutDBModel.tblTaskMaster" />
+    <AssociationSet Name="FK_tblBatchCourse_tblBatchMaster" Association="TutDBModel.FK_tblBatchCourse_tblBatchMaster">
+      <End Role="tblBatchMaster" EntitySet="tblBatchMasters" />
+      <End Role="tblBatchCourse" EntitySet="tblBatchCourses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblBatchCourse_tblCourseMaster" Association="TutDBModel.FK_tblBatchCourse_tblCourseMaster">
+      <End Role="tblCourseMaster" EntitySet="tblCourseMasters" />
+      <End Role="tblBatchCourse" EntitySet="tblBatchCourses" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblSessionActivity_tblBatchMaster" Association="TutDBModel.FK_tblSessionActivity_tblBatchMaster">
+      <End Role="tblBatchMaster" EntitySet="tblBatchMasters" />
+      <End Role="tblSessionActivity" EntitySet="tblSessionActivities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblStudentAllocation_tblBatchMaster" Association="TutDBModel.FK_tblStudentAllocation_tblBatchMaster">
+      <End Role="tblBatchMaster" EntitySet="tblBatchMasters" />
+      <End Role="tblStudentAllocation" EntitySet="tblStudentAllocations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEmployeeDetails_tblCityMaster" Association="TutDBModel.FK_tblEmployeeDetails_tblCityMaster">
+      <End Role="tblCityMaster" EntitySet="tblCityMasters" />
+      <End Role="tblEmployeeDetails" EntitySet="tblEmployeeDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblStudentDetails_tblCityMaster" Association="TutDBModel.FK_tblStudentDetails_tblCityMaster">
+      <End Role="tblCityMaster" EntitySet="tblCityMasters" />
+      <End Role="tblStudentDetails" EntitySet="tblStudentDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblCourseSubjectMapping_tblCourseMaster" Association="TutDBModel.FK_tblCourseSubjectMapping_tblCourseMaster">
+      <End Role="tblCourseMaster" EntitySet="tblCourseMasters" />
+      <End Role="tblCourseSubjectMapping" EntitySet="tblCourseSubjectMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblFeesMaster_tblCourseMaster" Association="TutDBModel.FK_tblFeesMaster_tblCourseMaster">
+      <End Role="tblCourseMaster" EntitySet="tblCourseMasters" />
+      <End Role="tblFeesMaster" EntitySet="tblFeesMasters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblSessionActivity_tblCourseMaster" Association="TutDBModel.FK_tblSessionActivity_tblCourseMaster">
+      <End Role="tblCourseMaster" EntitySet="tblCourseMasters" />
+      <End Role="tblSessionActivity" EntitySet="tblSessionActivities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblStudentAllocation_tblCourseMaster" Association="TutDBModel.FK_tblStudentAllocation_tblCourseMaster">
+      <End Role="tblCourseMaster" EntitySet="tblCourseMasters" />
+      <End Role="tblStudentAllocation" EntitySet="tblStudentAllocations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblCourseSubjectMapping_tblSubjectMaster" Association="TutDBModel.FK_tblCourseSubjectMapping_tblSubjectMaster">
+      <End Role="tblSubjectMaster" EntitySet="tblSubjectMasters" />
+      <End Role="tblCourseSubjectMapping" EntitySet="tblCourseSubjectMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblEmployeeDetails_tblGederMaster" Association="TutDBModel.FK_tblEmployeeDetails_tblGederMaster">
+      <End Role="tblGenderMaster" EntitySet="tblGenderMasters" />
+      <End Role="tblEmployeeDetails" EntitySet="tblEmployeeDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblStaffAttendance_tblEmployeeDetails" Association="TutDBModel.FK_tblStaffAttendance_tblEmployeeDetails">
+      <End Role="tblEmployeeDetails" EntitySet="tblEmployeeDetails" />
+      <End Role="tblStaffAttendance" EntitySet="tblStaffAttendances" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblSubjectEmployeeMapping_tblEmployeeDetails" Association="TutDBModel.FK_tblSubjectEmployeeMapping_tblEmployeeDetails">
+      <End Role="tblEmployeeDetails" EntitySet="tblEmployeeDetails" />
+      <End Role="tblSubjectEmployeeMapping" EntitySet="tblSubjectEmployeeMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblFeesDetails_tblStudentAllocation" Association="TutDBModel.FK_tblFeesDetails_tblStudentAllocation">
+      <End Role="tblStudentAllocation" EntitySet="tblStudentAllocations" />
+      <End Role="tblFeesDetails" EntitySet="tblFeesDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblFeeStructure_tblStudentAllocation" Association="TutDBModel.FK_tblFeeStructure_tblStudentAllocation">
+      <End Role="tblStudentAllocation" EntitySet="tblStudentAllocations" />
+      <End Role="tblFeeStructure" EntitySet="tblFeeStructures" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblStudentDetails_tblGenderMaster" Association="TutDBModel.FK_tblStudentDetails_tblGenderMaster">
+      <End Role="tblGenderMaster" EntitySet="tblGenderMasters" />
+      <End Role="tblStudentDetails" EntitySet="tblStudentDetails" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblLocationRoomMapping_tblLocationMaster" Association="TutDBModel.FK_tblLocationRoomMapping_tblLocationMaster">
+      <End Role="tblLocationMaster" EntitySet="tblLocationMasters" />
+      <End Role="tblLocationRoomMapping" EntitySet="tblLocationRoomMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblSessionActivity_tblLocationMaster" Association="TutDBModel.FK_tblSessionActivity_tblLocationMaster">
+      <End Role="tblLocationMaster" EntitySet="tblLocationMasters" />
+      <End Role="tblSessionActivity" EntitySet="tblSessionActivities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblLocationRoomMapping_tblRoomMaster" Association="TutDBModel.FK_tblLocationRoomMapping_tblRoomMaster">
+      <End Role="tblRoomMaster" EntitySet="tblRoomMasters" />
+      <End Role="tblLocationRoomMapping" EntitySet="tblLocationRoomMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblSessionActivity_tblRoomMaster" Association="TutDBModel.FK_tblSessionActivity_tblRoomMaster">
+      <End Role="tblRoomMaster" EntitySet="tblRoomMasters" />
+      <End Role="tblSessionActivity" EntitySet="tblSessionActivities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblSessionActivity_tblSessionMaster" Association="TutDBModel.FK_tblSessionActivity_tblSessionMaster">
+      <End Role="tblSessionMaster" EntitySet="tblSessionMasters" />
+      <End Role="tblSessionActivity" EntitySet="tblSessionActivities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblSessionActivity_tblTaskMaster" Association="TutDBModel.FK_tblSessionActivity_tblTaskMaster">
+      <End Role="tblTaskMaster" EntitySet="tblTaskMasters" />
+      <End Role="tblSessionActivity" EntitySet="tblSessionActivities" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblStaffAttendance_tblSessionActivity" Association="TutDBModel.FK_tblStaffAttendance_tblSessionActivity">
+      <End Role="tblSessionActivity" EntitySet="tblSessionActivities" />
+      <End Role="tblStaffAttendance" EntitySet="tblStaffAttendances" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblStudentAttendance_tblSessionActivity" Association="TutDBModel.FK_tblStudentAttendance_tblSessionActivity">
+      <End Role="tblSessionActivity" EntitySet="tblSessionActivities" />
+      <End Role="tblStudentAttendance" EntitySet="tblStudentAttendances" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblStudentAllocation_tblStudentDetails" Association="TutDBModel.FK_tblStudentAllocation_tblStudentDetails">
+      <End Role="tblStudentDetails" EntitySet="tblStudentDetails" />
+      <End Role="tblStudentAllocation" EntitySet="tblStudentAllocations" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblStudentAttendance_tblStudentAllocation" Association="TutDBModel.FK_tblStudentAttendance_tblStudentAllocation">
+      <End Role="tblStudentAllocation" EntitySet="tblStudentAllocations" />
+      <End Role="tblStudentAttendance" EntitySet="tblStudentAttendances" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblSubjectEmployeeMapping_tblSubjectMaster" Association="TutDBModel.FK_tblSubjectEmployeeMapping_tblSubjectMaster">
+      <End Role="tblSubjectMaster" EntitySet="tblSubjectMasters" />
+      <End Role="tblSubjectEmployeeMapping" EntitySet="tblSubjectEmployeeMappings" />
+    </AssociationSet>
+    <AssociationSet Name="FK_tblTaskMaster_tblSubjectMaster" Association="TutDBModel.FK_tblTaskMaster_tblSubjectMaster">
+      <End Role="tblSubjectMaster" EntitySet="tblSubjectMasters" />
+      <End Role="tblTaskMaster" EntitySet="tblTaskMasters" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_createInstallment">
+      <Parameter Name="studentId" Mode="In" Type="Int32" />
+      <Parameter Name="installmentNo" Mode="In" Type="Int32" />
+      <Parameter Name="payPattern" Mode="In" Type="Int32" />
+      <Parameter Name="payInterval" Mode="In" Type="Int32" />
+      <Parameter Name="preferredDate" Mode="In" Type="DateTime" />
+      <Parameter Name="preferredAmount" Mode="In" Type="Decimal" />
+    </FunctionImport>
+    <FunctionImport Name="sp_createSessionActivityAlternate" ReturnType="Collection(DateTime)">
+      <Parameter Name="dateFrom" Mode="In" Type="DateTime" />
+      <Parameter Name="dateTo" Mode="In" Type="DateTime" />
+      <Parameter Name="startTime" Mode="In" Type="Time" />
+      <Parameter Name="endTime" Mode="In" Type="Time" />
+      <Parameter Name="sessionId" Mode="In" Type="Int32" />
+      <Parameter Name="courseId" Mode="In" Type="Int32" />
+      <Parameter Name="batchId" Mode="In" Type="Int32" />
+      <Parameter Name="subjectId" Mode="In" Type="Int32" />
+      <Parameter Name="taskId" Mode="In" Type="Int32" />
+      <Parameter Name="locationId" Mode="In" Type="Int32" />
+      <Parameter Name="roomId" Mode="In" Type="Int32" />
+      <Parameter Name="duration" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_createSessionActivityAlternateExceptSundays" ReturnType="Collection(DateTime)">
+      <Parameter Name="dateFrom" Mode="In" Type="DateTime" />
+      <Parameter Name="dateTo" Mode="In" Type="DateTime" />
+      <Parameter Name="startTime" Mode="In" Type="Time" />
+      <Parameter Name="endTime" Mode="In" Type="Time" />
+      <Parameter Name="sessionId" Mode="In" Type="Int32" />
+      <Parameter Name="courseId" Mode="In" Type="Int32" />
+      <Parameter Name="batchId" Mode="In" Type="Int32" />
+      <Parameter Name="subjectId" Mode="In" Type="Int32" />
+      <Parameter Name="taskId" Mode="In" Type="Int32" />
+      <Parameter Name="locationId" Mode="In" Type="Int32" />
+      <Parameter Name="roomId" Mode="In" Type="Int32" />
+      <Parameter Name="duration" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_createSessionActivityDaily" ReturnType="Collection(DateTime)">
+      <Parameter Name="dateFrom" Mode="In" Type="DateTime" />
+      <Parameter Name="dateTo" Mode="In" Type="DateTime" />
+      <Parameter Name="startTime" Mode="In" Type="Time" />
+      <Parameter Name="endTime" Mode="In" Type="Time" />
+      <Parameter Name="sessionId" Mode="In" Type="Int32" />
+      <Parameter Name="courseId" Mode="In" Type="Int32" />
+      <Parameter Name="batchId" Mode="In" Type="Int32" />
+      <Parameter Name="subjectId" Mode="In" Type="Int32" />
+      <Parameter Name="taskId" Mode="In" Type="Int32" />
+      <Parameter Name="locationId" Mode="In" Type="Int32" />
+      <Parameter Name="roomId" Mode="In" Type="Int32" />
+      <Parameter Name="duration" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_createSessionActivityDailyExceptSunday" ReturnType="Collection(DateTime)">
+      <Parameter Name="dateFrom" Mode="In" Type="DateTime" />
+      <Parameter Name="dateTo" Mode="In" Type="DateTime" />
+      <Parameter Name="startTime" Mode="In" Type="Time" />
+      <Parameter Name="endTime" Mode="In" Type="Time" />
+      <Parameter Name="sessionId" Mode="In" Type="Int32" />
+      <Parameter Name="courseId" Mode="In" Type="Int32" />
+      <Parameter Name="batchId" Mode="In" Type="Int32" />
+      <Parameter Name="subjectId" Mode="In" Type="Int32" />
+      <Parameter Name="taskId" Mode="In" Type="Int32" />
+      <Parameter Name="locationId" Mode="In" Type="Int32" />
+      <Parameter Name="roomId" Mode="In" Type="Int32" />
+      <Parameter Name="duration" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_createSessionActivityMonthly" ReturnType="Collection(DateTime)">
+      <Parameter Name="dateFrom" Mode="In" Type="DateTime" />
+      <Parameter Name="dateTo" Mode="In" Type="DateTime" />
+      <Parameter Name="startTime" Mode="In" Type="Time" />
+      <Parameter Name="endTime" Mode="In" Type="Time" />
+      <Parameter Name="sessionId" Mode="In" Type="Int32" />
+      <Parameter Name="courseId" Mode="In" Type="Int32" />
+      <Parameter Name="batchId" Mode="In" Type="Int32" />
+      <Parameter Name="subjectId" Mode="In" Type="Int32" />
+      <Parameter Name="taskId" Mode="In" Type="Int32" />
+      <Parameter Name="locationId" Mode="In" Type="Int32" />
+      <Parameter Name="roomId" Mode="In" Type="Int32" />
+      <Parameter Name="duration" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_createSessionActivityWeekly" ReturnType="Collection(DateTime)">
+      <Parameter Name="dateFrom" Mode="In" Type="DateTime" />
+      <Parameter Name="dateTo" Mode="In" Type="DateTime" />
+      <Parameter Name="startTime" Mode="In" Type="Time" />
+      <Parameter Name="endTime" Mode="In" Type="Time" />
+      <Parameter Name="sessionId" Mode="In" Type="Int32" />
+      <Parameter Name="courseId" Mode="In" Type="Int32" />
+      <Parameter Name="batchId" Mode="In" Type="Int32" />
+      <Parameter Name="subjectId" Mode="In" Type="Int32" />
+      <Parameter Name="taskId" Mode="In" Type="Int32" />
+      <Parameter Name="locationId" Mode="In" Type="Int32" />
+      <Parameter Name="roomId" Mode="In" Type="Int32" />
+      <Parameter Name="duration" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_createSessionActivityWeeklyExceptSunday" ReturnType="Collection(DateTime)">
+      <Parameter Name="dateFrom" Mode="In" Type="DateTime" />
+      <Parameter Name="dateTo" Mode="In" Type="DateTime" />
+      <Parameter Name="startTime" Mode="In" Type="Time" />
+      <Parameter Name="endTime" Mode="In" Type="Time" />
+      <Parameter Name="sessionId" Mode="In" Type="Int32" />
+      <Parameter Name="courseId" Mode="In" Type="Int32" />
+      <Parameter Name="batchId" Mode="In" Type="Int32" />
+      <Parameter Name="subjectId" Mode="In" Type="Int32" />
+      <Parameter Name="taskId" Mode="In" Type="Int32" />
+      <Parameter Name="locationId" Mode="In" Type="Int32" />
+      <Parameter Name="roomId" Mode="In" Type="Int32" />
+      <Parameter Name="duration" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(TutDBModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(TutDBModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+  </EntityContainer>
+  <EntityType Name="sysdiagram">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" Nullable="false" MaxLength="128" Unicode="true" FixedLength="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="tblBasicMaster">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Value" Type="String" MaxLength="50" Unicode="true" FixedLength="false" />
+    <Property Name="isActive" Type="Int64" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+  </EntityType>
+  <EntityType Name="tblBatchCourse">
+    <Key>
+      <PropertyRef Name="BatchCourseId" />
+    </Key>
+    <Property Name="BatchCourseId" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="CourseId" Type="Int64" />
+    <Property Name="BatchId" Type="Int64" />
+    <Property Name="isActive" Type="Int64" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tblBatchMaster" Relationship="TutDBModel.FK_tblBatchCourse_tblBatchMaster" FromRole="tblBatchCourse" ToRole="tblBatchMaster" />
+    <NavigationProperty Name="tblCourseMaster" Relationship="TutDBModel.FK_tblBatchCourse_tblCourseMaster" FromRole="tblBatchCourse" ToRole="tblCourseMaster" />
+  </EntityType>
+  <EntityType Name="tblBatchMaster">
+    <Key>
+      <PropertyRef Name="BatchId" />
+    </Key>
+    <Property Name="BatchId" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="BatchCode" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="BatchName" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="isActive" Type="Int64" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tblBatchCourses" Relationship="TutDBModel.FK_tblBatchCourse_tblBatchMaster" FromRole="tblBatchMaster" ToRole="tblBatchCourse" />
+    <NavigationProperty Name="tblSessionActivities" Relationship="TutDBModel.FK_tblSessionActivity_tblBatchMaster" FromRole="tblBatchMaster" ToRole="tblSessionActivity" />
+    <NavigationProperty Name="tblStudentAllocations" Relationship="TutDBModel.FK_tblStudentAllocation_tblBatchMaster" FromRole="tblBatchMaster" ToRole="tblStudentAllocation" />
+  </EntityType>
+  <EntityType Name="tblCityMaster">
+    <Key>
+      <PropertyRef Name="CityId" />
+    </Key>
+    <Property Name="CityId" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="CityName" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="isActive" Type="Int64" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tblEmployeeDetails" Relationship="TutDBModel.FK_tblEmployeeDetails_tblCityMaster" FromRole="tblCityMaster" ToRole="tblEmployeeDetails" />
+    <NavigationProperty Name="tblStudentDetails" Relationship="TutDBModel.FK_tblStudentDetails_tblCityMaster" FromRole="tblCityMaster" ToRole="tblStudentDetails" />
+  </EntityType>
+  <EntityType Name="tblCourseMaster">
+    <Key>
+      <PropertyRef Name="CourseId" />
+    </Key>
+    <Property Name="CourseId" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="CourseCode" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="CourseName" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="isActive" Type="Int64" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tblBatchCourses" Relationship="TutDBModel.FK_tblBatchCourse_tblCourseMaster" FromRole="tblCourseMaster" ToRole="tblBatchCourse" />
+    <NavigationProperty Name="tblCourseSubjectMappings" Relationship="TutDBModel.FK_tblCourseSubjectMapping_tblCourseMaster" FromRole="tblCourseMaster" ToRole="tblCourseSubjectMapping" />
+    <NavigationProperty Name="tblFeesMasters" Relationship="TutDBModel.FK_tblFeesMaster_tblCourseMaster" FromRole="tblCourseMaster" ToRole="tblFeesMaster" />
+    <NavigationProperty Name="tblSessionActivities" Relationship="TutDBModel.FK_tblSessionActivity_tblCourseMaster" FromRole="tblCourseMaster" ToRole="tblSessionActivity" />
+    <NavigationProperty Name="tblStudentAllocations" Relationship="TutDBModel.FK_tblStudentAllocation_tblCourseMaster" FromRole="tblCourseMaster" ToRole="tblStudentAllocation" />
+  </EntityType>
+  <EntityType Name="tblCourseSubjectMapping">
+    <Key>
+      <PropertyRef Name="CourseMapId" />
+    </Key>
+    <Property Name="CourseMapId" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="CourseId" Type="Int64" />
+    <Property Name="SubjectId" Type="Int64" />
+    <Property Name="isActive" Type="Int64" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="tblCourseMaster" Relationship="TutDBModel.FK_tblCourseSubjectMapping_tblCourseMaster" FromRole="tblCourseSubjectMapping" ToRole="tblCourseMaster" />
+    <NavigationProperty Name="tblSubjectMaster" Relationship="TutDBModel.FK_tblCourseSubjectMapping_tblSubjectMaster" FromRole="tblCourseSubjectMapping" ToRole="tblSubjectMaster" />
+  </EntityType>
+  <EntityType Name="tblEmployeeDetail">
+    <Key>
+      <PropertyRef Name="EmployeeId" />
+    </Key>
+    <Property Name="EmployeeId" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeCode" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="FirstName" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="MiddleName" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="LastName" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="FatherName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="MotherName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="DOB" Type="DateTime" Precision="0" />
+    <Property Name="Sex" Type="Int64" />
+    <Property Name="Address1" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Address2" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="CityId" Type="Int64" />
+    <Property Name="ResiContacts" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="Contacts" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="Email" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Dpic" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="Designation" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="isActive" Type="Int64" />
+    <Property Name="Qualificaton" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="JoiningDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tblCityMaster" Relationship="TutDBModel.FK_tblEmployeeDetails_tblCityMaster" FromRole="tblEmployeeDetails" ToRole="tblCityMaster" />
+    <NavigationProperty Name="tblGenderMaster" Relationship="TutDBModel.FK_tblEmployeeDetails_tblGederMaster" FromRole="tblEmployeeDetails" ToRole="tblGenderMaster" />
+    <NavigationProperty Name="tblStaffAttendances" Relationship="TutDBModel.FK_tblStaffAttendance_tblEmployeeDetails" FromRole="tblEmployeeDetails" ToRole="tblStaffAttendance" />
+    <NavigationProperty Name="tblSubjectEmployeeMappings" Relationship="TutDBModel.FK_tblSubjectEmployeeMapping_tblEmployeeDetails" FromRole="tblEmployeeDetails" ToRole="tblSubjectEmployeeMapping" />
+  </EntityType>
+  <EntityType Name="tblFeesDetail">
+    <Key>
+      <PropertyRef Name="RecordId" />
+    </Key>
+    <Property Name="RecordId" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="FeeReceiptNo" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="AllocationId" Type="Int64" />
+    <Property Name="AmountToBePaid" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="AmountPaid" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="ActualFees" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="ServiceTax" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="OtherTax" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="PaidTimeStamp" Type="DateTime" Precision="3" />
+    <Property Name="Balance" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Advance" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="isActive" Type="Int64" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tblStudentAllocation" Relationship="TutDBModel.FK_tblFeesDetails_tblStudentAllocation" FromRole="tblFeesDetails" ToRole="tblStudentAllocation" />
+  </EntityType>
+  <EntityType Name="tblFeesMaster">
+    <Key>
+      <PropertyRef Name="FeeRecordId" />
+    </Key>
+    <Property Name="FeeRecordId" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="CourseId" Type="Int64" />
+    <Property Name="Amount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="isActive" Type="Int64" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tblCourseMaster" Relationship="TutDBModel.FK_tblFeesMaster_tblCourseMaster" FromRole="tblFeesMaster" ToRole="tblCourseMaster" />
+  </EntityType>
+  <EntityType Name="tblFeeStructure">
+    <Key>
+      <PropertyRef Name="FeeStructId" />
+    </Key>
+    <Property Name="FeeStructId" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="AllocationId" Type="Int64" />
+    <Property Name="InstallmentNo" Type="Int32" />
+    <Property Name="InstallmentAmount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="InstallmentDate" Type="DateTime" Precision="3" />
+    <Property Name="AmountRemaining" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="PaidStatus" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="PaidDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tblStudentAllocation" Relationship="TutDBModel.FK_tblFeeStructure_tblStudentAllocation" FromRole="tblFeeStructure" ToRole="tblStudentAllocation" />
+  </EntityType>
+  <EntityType Name="tblGenderMaster">
+    <Key>
+      <PropertyRef Name="GenderId" />
+    </Key>
+    <Property Name="GenderId" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="Description" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="isActive" Type="Int64" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tblEmployeeDetails" Relationship="TutDBModel.FK_tblEmployeeDetails_tblGederMaster" FromRole="tblGenderMaster" ToRole="tblEmployeeDetails" />
+    <NavigationProperty Name="tblStudentDetails" Relationship="TutDBModel.FK_tblStudentDetails_tblGenderMaster" FromRole="tblGenderMaster" ToRole="tblStudentDetails" />
+  </EntityType>
+  <EntityType Name="tblLocationMaster">
+    <Key>
+      <PropertyRef Name="LocationId" />
+    </Key>
+    <Property Name="LocationId" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="LocationCode" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="LocationName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="LocationDescription" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="isActive" Type="Int64" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="tblLocationRoomMappings" Relationship="TutDBModel.FK_tblLocationRoomMapping_tblLocationMaster" FromRole="tblLocationMaster" ToRole="tblLocationRoomMapping" />
+    <NavigationProperty Name="tblSessionActivities" Relationship="TutDBModel.FK_tblSessionActivity_tblLocationMaster" FromRole="tblLocationMaster" ToRole="tblSessionActivity" />
+  </EntityType>
+  <EntityType Name="tblLocationRoomMapping">
+    <Key>
+      <PropertyRef Name="LocationRoomId" />
+    </Key>
+    <Property Name="LocationRoomId" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="LocationId" Type="Int64" />
+    <Property Name="RoomId" Type="Int64" />
+    <Property Name="isActive" Type="Int64" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="tblLocationMaster" Relationship="TutDBModel.FK_tblLocationRoomMapping_tblLocationMaster" FromRole="tblLocationRoomMapping" ToRole="tblLocationMaster" />
+    <NavigationProperty Name="tblRoomMaster" Relationship="TutDBModel.FK_tblLocationRoomMapping_tblRoomMaster" FromRole="tblLocationRoomMapping" ToRole="tblRoomMaster" />
+  </EntityType>
+  <EntityType Name="tblRoomMaster">
+    <Key>
+      <PropertyRef Name="RoomId" />
+    </Key>
+    <Property Name="RoomId" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="RoomName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="RoomDescription" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="isActive" Type="Int64" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="tblLocationRoomMappings" Relationship="TutDBModel.FK_tblLocationRoomMapping_tblRoomMaster" FromRole="tblRoomMaster" ToRole="tblLocationRoomMapping" />
+    <NavigationProperty Name="tblSessionActivities" Relationship="TutDBModel.FK_tblSessionActivity_tblRoomMaster" FromRole="tblRoomMaster" ToRole="tblSessionActivity" />
+  </EntityType>
+  <EntityType Name="tblSessionActivity">
+    <Key>
+      <PropertyRef Name="SessionActivityId" />
+    </Key>
+    <Property Name="SessionActivityId" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="SessionId" Type="Int64" />
+    <Property Name="TaskId" Type="Int64" />
+    <Property Name="SessionDate" Type="DateTime" Precision="0" />
+    <Property Name="StartTime" Type="Time" Precision="7" />
+    <Property Name="EndTime" Type="Time" Precision="7" />
+    <Property Name="SessionDuration" Type="String" MaxLength="10" Unicode="true" FixedLength="true" />
+    <Property Name="LocationId" Type="Int64" />
+    <Property Name="RoomId" Type="Int64" />
+    <Property Name="CourseId" Type="Int64" />
+    <Property Name="BatchId" Type="Int64" />
+    <Property Name="SubjectId" Type="Int64" />
+    <Property Name="isActive" Type="Int64" />
+    <Property Name="isCompleted" Type="Int64" />
+    <Property Name="ActivityStatus" Type="Int64" />
+    <Property Name="AttendanceRecorded" Type="Int64" />
+    <Property Name="Comments" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="tblBatchMaster" Relationship="TutDBModel.FK_tblSessionActivity_tblBatchMaster" FromRole="tblSessionActivity" ToRole="tblBatchMaster" />
+    <NavigationProperty Name="tblCourseMaster" Relationship="TutDBModel.FK_tblSessionActivity_tblCourseMaster" FromRole="tblSessionActivity" ToRole="tblCourseMaster" />
+    <NavigationProperty Name="tblLocationMaster" Relationship="TutDBModel.FK_tblSessionActivity_tblLocationMaster" FromRole="tblSessionActivity" ToRole="tblLocationMaster" />
+    <NavigationProperty Name="tblRoomMaster" Relationship="TutDBModel.FK_tblSessionActivity_tblRoomMaster" FromRole="tblSessionActivity" ToRole="tblRoomMaster" />
+    <NavigationProperty Name="tblSessionMaster" Relationship="TutDBModel.FK_tblSessionActivity_tblSessionMaster" FromRole="tblSessionActivity" ToRole="tblSessionMaster" />
+    <NavigationProperty Name="tblTaskMaster" Relationship="TutDBModel.FK_tblSessionActivity_tblTaskMaster" FromRole="tblSessionActivity" ToRole="tblTaskMaster" />
+    <NavigationProperty Name="tblStaffAttendances" Relationship="TutDBModel.FK_tblStaffAttendance_tblSessionActivity" FromRole="tblSessionActivity" ToRole="tblStaffAttendance" />
+    <NavigationProperty Name="tblStudentAttendances" Relationship="TutDBModel.FK_tblStudentAttendance_tblSessionActivity" FromRole="tblSessionActivity" ToRole="tblStudentAttendance" />
+  </EntityType>
+  <EntityType Name="tblSessionMaster">
+    <Key>
+      <PropertyRef Name="SessionId" />
+    </Key>
+    <Property Name="SessionId" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="SessionCode" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="SessionOwnerId" Type="Int64" />
+    <Property Name="SessionDescription" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="SessionTime" Type="Int32" />
+    <Property Name="SessionOccurances" Type="Int64" />
+    <Property Name="isActive" Type="Int64" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="tblSessionActivities" Relationship="TutDBModel.FK_tblSessionActivity_tblSessionMaster" FromRole="tblSessionMaster" ToRole="tblSessionActivity" />
+  </EntityType>
+  <EntityType Name="tblStaffAttendance">
+    <Key>
+      <PropertyRef Name="StaffAttendanceId" />
+    </Key>
+    <Property Name="StaffAttendanceId" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeId" Type="Int64" />
+    <Property Name="SessionActivityId" Type="Int64" />
+    <Property Name="EnteredDate" Type="DateTime" Precision="3" />
+    <Property Name="AttendanceDate" Type="DateTime" Precision="0" />
+    <Property Name="isPresent" Type="Int32" />
+    <Property Name="LeaveReason" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="Reviewed" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tblEmployeeDetail" Relationship="TutDBModel.FK_tblStaffAttendance_tblEmployeeDetails" FromRole="tblStaffAttendance" ToRole="tblEmployeeDetails" />
+    <NavigationProperty Name="tblSessionActivity" Relationship="TutDBModel.FK_tblStaffAttendance_tblSessionActivity" FromRole="tblStaffAttendance" ToRole="tblSessionActivity" />
+  </EntityType>
+  <EntityType Name="tblStudentAllocation">
+    <Key>
+      <PropertyRef Name="AllocationId" />
+    </Key>
+    <Property Name="AllocationId" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="StudentId" Type="Int64" />
+    <Property Name="CourseId" Type="Int64" />
+    <Property Name="BatchId" Type="Int64" />
+    <Property Name="StartDate" Type="DateTime" Precision="3" />
+    <Property Name="EndDate" Type="DateTime" Precision="3" />
+    <Property Name="isActive" Type="Int32" />
+    <Property Name="isOver" Type="Int32" />
+    <Property Name="LastQualification" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="LastQualificationScore" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="AdmitDate" Type="DateTime" Precision="3" />
+    <Property Name="Fees" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Discount" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="ActualFees" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="Deposit" Type="Decimal" Precision="19" Scale="4" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tblBatchMaster" Relationship="TutDBModel.FK_tblStudentAllocation_tblBatchMaster" FromRole="tblStudentAllocation" ToRole="tblBatchMaster" />
+    <NavigationProperty Name="tblCourseMaster" Relationship="TutDBModel.FK_tblStudentAllocation_tblCourseMaster" FromRole="tblStudentAllocation" ToRole="tblCourseMaster" />
+    <NavigationProperty Name="tblFeesDetails" Relationship="TutDBModel.FK_tblFeesDetails_tblStudentAllocation" FromRole="tblStudentAllocation" ToRole="tblFeesDetails" />
+    <NavigationProperty Name="tblFeeStructures" Relationship="TutDBModel.FK_tblFeeStructure_tblStudentAllocation" FromRole="tblStudentAllocation" ToRole="tblFeeStructure" />
+    <NavigationProperty Name="tblStudentDetail" Relationship="TutDBModel.FK_tblStudentAllocation_tblStudentDetails" FromRole="tblStudentAllocation" ToRole="tblStudentDetails" />
+    <NavigationProperty Name="tblStudentAttendances" Relationship="TutDBModel.FK_tblStudentAttendance_tblStudentAllocation" FromRole="tblStudentAllocation" ToRole="tblStudentAttendance" />
+  </EntityType>
+  <EntityType Name="tblStudentAttendance">
+    <Key>
+      <PropertyRef Name="StudentAttendanceId" />
+    </Key>
+    <Property Name="StudentAttendanceId" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="SessionActivityId" Type="Int64" />
+    <Property Name="AllocationId" Type="Int64" />
+    <Property Name="EnteredDate" Type="DateTime" Precision="3" />
+    <Property Name="AttendanceDate" Type="DateTime" Precision="0" />
+    <Property Name="isPresent" Type="Int32" />
+    <Property Name="LeaveReason" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Reviewed" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <NavigationProperty Name="tblSessionActivity" Relationship="TutDBModel.FK_tblStudentAttendance_tblSessionActivity" FromRole="tblStudentAttendance" ToRole="tblSessionActivity" />
+    <NavigationProperty Name="tblStudentAllocation" Relationship="TutDBModel.FK_tblStudentAttendance_tblStudentAllocation" FromRole="tblStudentAttendance" ToRole="tblStudentAllocation" />
+  </EntityType>
+  <EntityType Name="tblStudentDetail">
+    <Key>
+      <PropertyRef Name="StudentId" />
+    </Key>
+    <Property Name="StudentId" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="FirstName" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="MiddleName" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="LastName" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="FatherName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="MotherName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="DOB" Type="DateTime" Precision="0" />
+    <Property Name="Sex" Type="Int64" />
+    <Property Name="Address1" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="Address2" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="CityId" Type="Int64" />
+    <Property Name="Dpic" Type="Binary" MaxLength="Max" FixedLength="false" />
+    <Property Name="isActive" Type="Int64" />
+    <Property Name="AdmitDate" Type="DateTime" Precision="3" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="3" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="3" />
+    <Property Name="FatherContacts" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="MotherContacts" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="ResiContacts" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="Contacts" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="Email" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="StudentCode" Type="String" MaxLength="20" Unicode="false" FixedLength="false" />
+    <Property Name="LastQualificatiion" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="LastQualificationScore" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <NavigationProperty Name="tblCityMaster" Relationship="TutDBModel.FK_tblStudentDetails_tblCityMaster" FromRole="tblStudentDetails" ToRole="tblCityMaster" />
+    <NavigationProperty Name="tblGenderMaster" Relationship="TutDBModel.FK_tblStudentDetails_tblGenderMaster" FromRole="tblStudentDetails" ToRole="tblGenderMaster" />
+    <NavigationProperty Name="tblStudentAllocations" Relationship="TutDBModel.FK_tblStudentAllocation_tblStudentDetails" FromRole="tblStudentDetails" ToRole="tblStudentAllocation" />
+  </EntityType>
+  <EntityType Name="tblSubjectEmployeeMapping">
+    <Key>
+      <PropertyRef Name="SubjectMapId" />
+    </Key>
+    <Property Name="SubjectMapId" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="EmployeeId" Type="Int64" />
+    <Property Name="SubjectId" Type="Int64" />
+    <Property Name="isActvie" Type="Int64" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="tblEmployeeDetail" Relationship="TutDBModel.FK_tblSubjectEmployeeMapping_tblEmployeeDetails" FromRole="tblSubjectEmployeeMapping" ToRole="tblEmployeeDetails" />
+    <NavigationProperty Name="tblSubjectMaster" Relationship="TutDBModel.FK_tblSubjectEmployeeMapping_tblSubjectMaster" FromRole="tblSubjectEmployeeMapping" ToRole="tblSubjectMaster" />
+  </EntityType>
+  <EntityType Name="tblSubjectMaster">
+    <Key>
+      <PropertyRef Name="SubjectId" />
+    </Key>
+    <Property Name="SubjectId" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="SubjectName" Type="String" MaxLength="30" Unicode="false" FixedLength="false" />
+    <Property Name="Description" Type="String" MaxLength="100" Unicode="false" FixedLength="false" />
+    <Property Name="isActive" Type="Int64" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="tblCourseSubjectMappings" Relationship="TutDBModel.FK_tblCourseSubjectMapping_tblSubjectMaster" FromRole="tblSubjectMaster" ToRole="tblCourseSubjectMapping" />
+    <NavigationProperty Name="tblSubjectEmployeeMappings" Relationship="TutDBModel.FK_tblSubjectEmployeeMapping_tblSubjectMaster" FromRole="tblSubjectMaster" ToRole="tblSubjectEmployeeMapping" />
+    <NavigationProperty Name="tblTaskMasters" Relationship="TutDBModel.FK_tblTaskMaster_tblSubjectMaster" FromRole="tblSubjectMaster" ToRole="tblTaskMaster" />
+  </EntityType>
+  <EntityType Name="tblTaskMaster">
+    <Key>
+      <PropertyRef Name="TaskId" />
+    </Key>
+    <Property Name="TaskId" Type="Int64" Nullable="false" p1:StoreGeneratedPattern="Identity" />
+    <Property Name="TaskCode" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="TaskName" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="TaskDescription" Type="String" MaxLength="50" Unicode="false" FixedLength="false" />
+    <Property Name="isActive" Type="Int64" />
+    <Property Name="TaskAgainstId" Type="Int64" />
+    <Property Name="EstimatedTime" Type="Int32" />
+    <Property Name="ActualTime" Type="Int32" />
+    <Property Name="CreatedDate" Type="DateTime" Precision="0" />
+    <Property Name="UpdatedDate" Type="DateTime" Precision="0" />
+    <NavigationProperty Name="tblSessionActivities" Relationship="TutDBModel.FK_tblSessionActivity_tblTaskMaster" FromRole="tblTaskMaster" ToRole="tblSessionActivity" />
+    <NavigationProperty Name="tblSubjectMaster" Relationship="TutDBModel.FK_tblTaskMaster_tblSubjectMaster" FromRole="tblTaskMaster" ToRole="tblSubjectMaster" />
+  </EntityType>
+  <Association Name="FK_tblBatchCourse_tblBatchMaster">
+    <End Role="tblBatchMaster" Type="TutDBModel.tblBatchMaster" Multiplicity="0..1" />
+    <End Role="tblBatchCourse" Type="TutDBModel.tblBatchCourse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBatchMaster">
+        <PropertyRef Name="BatchId" />
+      </Principal>
+      <Dependent Role="tblBatchCourse">
+        <PropertyRef Name="BatchId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblBatchCourse_tblCourseMaster">
+    <End Role="tblCourseMaster" Type="TutDBModel.tblCourseMaster" Multiplicity="0..1" />
+    <End Role="tblBatchCourse" Type="TutDBModel.tblBatchCourse" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCourseMaster">
+        <PropertyRef Name="CourseId" />
+      </Principal>
+      <Dependent Role="tblBatchCourse">
+        <PropertyRef Name="CourseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblSessionActivity_tblBatchMaster">
+    <End Role="tblBatchMaster" Type="TutDBModel.tblBatchMaster" Multiplicity="0..1" />
+    <End Role="tblSessionActivity" Type="TutDBModel.tblSessionActivity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBatchMaster">
+        <PropertyRef Name="BatchId" />
+      </Principal>
+      <Dependent Role="tblSessionActivity">
+        <PropertyRef Name="BatchId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblStudentAllocation_tblBatchMaster">
+    <End Role="tblBatchMaster" Type="TutDBModel.tblBatchMaster" Multiplicity="0..1" />
+    <End Role="tblStudentAllocation" Type="TutDBModel.tblStudentAllocation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblBatchMaster">
+        <PropertyRef Name="BatchId" />
+      </Principal>
+      <Dependent Role="tblStudentAllocation">
+        <PropertyRef Name="BatchId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEmployeeDetails_tblCityMaster">
+    <End Role="tblCityMaster" Type="TutDBModel.tblCityMaster" Multiplicity="0..1" />
+    <End Role="tblEmployeeDetails" Type="TutDBModel.tblEmployeeDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCityMaster">
+        <PropertyRef Name="CityId" />
+      </Principal>
+      <Dependent Role="tblEmployeeDetails">
+        <PropertyRef Name="CityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblStudentDetails_tblCityMaster">
+    <End Role="tblCityMaster" Type="TutDBModel.tblCityMaster" Multiplicity="0..1" />
+    <End Role="tblStudentDetails" Type="TutDBModel.tblStudentDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCityMaster">
+        <PropertyRef Name="CityId" />
+      </Principal>
+      <Dependent Role="tblStudentDetails">
+        <PropertyRef Name="CityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblCourseSubjectMapping_tblCourseMaster">
+    <End Role="tblCourseMaster" Type="TutDBModel.tblCourseMaster" Multiplicity="0..1" />
+    <End Role="tblCourseSubjectMapping" Type="TutDBModel.tblCourseSubjectMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCourseMaster">
+        <PropertyRef Name="CourseId" />
+      </Principal>
+      <Dependent Role="tblCourseSubjectMapping">
+        <PropertyRef Name="CourseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblFeesMaster_tblCourseMaster">
+    <End Role="tblCourseMaster" Type="TutDBModel.tblCourseMaster" Multiplicity="0..1" />
+    <End Role="tblFeesMaster" Type="TutDBModel.tblFeesMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCourseMaster">
+        <PropertyRef Name="CourseId" />
+      </Principal>
+      <Dependent Role="tblFeesMaster">
+        <PropertyRef Name="CourseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblSessionActivity_tblCourseMaster">
+    <End Role="tblCourseMaster" Type="TutDBModel.tblCourseMaster" Multiplicity="0..1" />
+    <End Role="tblSessionActivity" Type="TutDBModel.tblSessionActivity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCourseMaster">
+        <PropertyRef Name="CourseId" />
+      </Principal>
+      <Dependent Role="tblSessionActivity">
+        <PropertyRef Name="CourseId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblStudentAllocation_tblCourseMaster">
+    <End Role="tblCourseMaster" Type="TutDBModel.tblCourseMaster" Multiplicity="0..1" />
+    <End Role="tblStudentAllocation" Type="TutDBModel.tblStudentAllocation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblCourseMaster">
+        <PropertyRef Name="CourseId" />
+      </Principal>
+      <Dependent Role="tblStudentAllocation">
+        <PropertyRef Name="BatchId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblCourseSubjectMapping_tblSubjectMaster">
+    <End Role="tblSubjectMaster" Type="TutDBModel.tblSubjectMaster" Multiplicity="0..1" />
+    <End Role="tblCourseSubjectMapping" Type="TutDBModel.tblCourseSubjectMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblSubjectMaster">
+        <PropertyRef Name="SubjectId" />
+      </Principal>
+      <Dependent Role="tblCourseSubjectMapping">
+        <PropertyRef Name="SubjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblEmployeeDetails_tblGederMaster">
+    <End Role="tblGenderMaster" Type="TutDBModel.tblGenderMaster" Multiplicity="0..1" />
+    <End Role="tblEmployeeDetails" Type="TutDBModel.tblEmployeeDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblGenderMaster">
+        <PropertyRef Name="GenderId" />
+      </Principal>
+      <Dependent Role="tblEmployeeDetails">
+        <PropertyRef Name="Sex" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblStaffAttendance_tblEmployeeDetails">
+    <End Role="tblEmployeeDetails" Type="TutDBModel.tblEmployeeDetail" Multiplicity="0..1" />
+    <End Role="tblStaffAttendance" Type="TutDBModel.tblStaffAttendance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEmployeeDetails">
+        <PropertyRef Name="EmployeeId" />
+      </Principal>
+      <Dependent Role="tblStaffAttendance">
+        <PropertyRef Name="EmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblSubjectEmployeeMapping_tblEmployeeDetails">
+    <End Role="tblEmployeeDetails" Type="TutDBModel.tblEmployeeDetail" Multiplicity="0..1" />
+    <End Role="tblSubjectEmployeeMapping" Type="TutDBModel.tblSubjectEmployeeMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblEmployeeDetails">
+        <PropertyRef Name="EmployeeId" />
+      </Principal>
+      <Dependent Role="tblSubjectEmployeeMapping">
+        <PropertyRef Name="EmployeeId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblFeesDetails_tblStudentAllocation">
+    <End Role="tblStudentAllocation" Type="TutDBModel.tblStudentAllocation" Multiplicity="0..1" />
+    <End Role="tblFeesDetails" Type="TutDBModel.tblFeesDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblStudentAllocation">
+        <PropertyRef Name="AllocationId" />
+      </Principal>
+      <Dependent Role="tblFeesDetails">
+        <PropertyRef Name="AllocationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblFeeStructure_tblStudentAllocation">
+    <End Role="tblStudentAllocation" Type="TutDBModel.tblStudentAllocation" Multiplicity="0..1" />
+    <End Role="tblFeeStructure" Type="TutDBModel.tblFeeStructure" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblStudentAllocation">
+        <PropertyRef Name="AllocationId" />
+      </Principal>
+      <Dependent Role="tblFeeStructure">
+        <PropertyRef Name="AllocationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblStudentDetails_tblGenderMaster">
+    <End Role="tblGenderMaster" Type="TutDBModel.tblGenderMaster" Multiplicity="0..1" />
+    <End Role="tblStudentDetails" Type="TutDBModel.tblStudentDetail" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblGenderMaster">
+        <PropertyRef Name="GenderId" />
+      </Principal>
+      <Dependent Role="tblStudentDetails">
+        <PropertyRef Name="Sex" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblLocationRoomMapping_tblLocationMaster">
+    <End Role="tblLocationMaster" Type="TutDBModel.tblLocationMaster" Multiplicity="0..1" />
+    <End Role="tblLocationRoomMapping" Type="TutDBModel.tblLocationRoomMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblLocationMaster">
+        <PropertyRef Name="LocationId" />
+      </Principal>
+      <Dependent Role="tblLocationRoomMapping">
+        <PropertyRef Name="LocationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblSessionActivity_tblLocationMaster">
+    <End Role="tblLocationMaster" Type="TutDBModel.tblLocationMaster" Multiplicity="0..1" />
+    <End Role="tblSessionActivity" Type="TutDBModel.tblSessionActivity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblLocationMaster">
+        <PropertyRef Name="LocationId" />
+      </Principal>
+      <Dependent Role="tblSessionActivity">
+        <PropertyRef Name="LocationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblLocationRoomMapping_tblRoomMaster">
+    <End Role="tblRoomMaster" Type="TutDBModel.tblRoomMaster" Multiplicity="0..1" />
+    <End Role="tblLocationRoomMapping" Type="TutDBModel.tblLocationRoomMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblRoomMaster">
+        <PropertyRef Name="RoomId" />
+      </Principal>
+      <Dependent Role="tblLocationRoomMapping">
+        <PropertyRef Name="RoomId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblSessionActivity_tblRoomMaster">
+    <End Role="tblRoomMaster" Type="TutDBModel.tblRoomMaster" Multiplicity="0..1" />
+    <End Role="tblSessionActivity" Type="TutDBModel.tblSessionActivity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblRoomMaster">
+        <PropertyRef Name="RoomId" />
+      </Principal>
+      <Dependent Role="tblSessionActivity">
+        <PropertyRef Name="RoomId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblSessionActivity_tblSessionMaster">
+    <End Role="tblSessionMaster" Type="TutDBModel.tblSessionMaster" Multiplicity="0..1" />
+    <End Role="tblSessionActivity" Type="TutDBModel.tblSessionActivity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblSessionMaster">
+        <PropertyRef Name="SessionId" />
+      </Principal>
+      <Dependent Role="tblSessionActivity">
+        <PropertyRef Name="SessionId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblSessionActivity_tblTaskMaster">
+    <End Role="tblTaskMaster" Type="TutDBModel.tblTaskMaster" Multiplicity="0..1" />
+    <End Role="tblSessionActivity" Type="TutDBModel.tblSessionActivity" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblTaskMaster">
+        <PropertyRef Name="TaskId" />
+      </Principal>
+      <Dependent Role="tblSessionActivity">
+        <PropertyRef Name="TaskId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblStaffAttendance_tblSessionActivity">
+    <End Role="tblSessionActivity" Type="TutDBModel.tblSessionActivity" Multiplicity="0..1" />
+    <End Role="tblStaffAttendance" Type="TutDBModel.tblStaffAttendance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblSessionActivity">
+        <PropertyRef Name="SessionActivityId" />
+      </Principal>
+      <Dependent Role="tblStaffAttendance">
+        <PropertyRef Name="SessionActivityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblStudentAttendance_tblSessionActivity">
+    <End Role="tblSessionActivity" Type="TutDBModel.tblSessionActivity" Multiplicity="0..1" />
+    <End Role="tblStudentAttendance" Type="TutDBModel.tblStudentAttendance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblSessionActivity">
+        <PropertyRef Name="SessionActivityId" />
+      </Principal>
+      <Dependent Role="tblStudentAttendance">
+        <PropertyRef Name="SessionActivityId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblStudentAllocation_tblStudentDetails">
+    <End Role="tblStudentDetails" Type="TutDBModel.tblStudentDetail" Multiplicity="0..1" />
+    <End Role="tblStudentAllocation" Type="TutDBModel.tblStudentAllocation" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblStudentDetails">
+        <PropertyRef Name="StudentId" />
+      </Principal>
+      <Dependent Role="tblStudentAllocation">
+        <PropertyRef Name="BatchId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblStudentAttendance_tblStudentAllocation">
+    <End Role="tblStudentAllocation" Type="TutDBModel.tblStudentAllocation" Multiplicity="0..1" />
+    <End Role="tblStudentAttendance" Type="TutDBModel.tblStudentAttendance" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblStudentAllocation">
+        <PropertyRef Name="AllocationId" />
+      </Principal>
+      <Dependent Role="tblStudentAttendance">
+        <PropertyRef Name="AllocationId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblSubjectEmployeeMapping_tblSubjectMaster">
+    <End Role="tblSubjectMaster" Type="TutDBModel.tblSubjectMaster" Multiplicity="0..1" />
+    <End Role="tblSubjectEmployeeMapping" Type="TutDBModel.tblSubjectEmployeeMapping" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblSubjectMaster">
+        <PropertyRef Name="SubjectId" />
+      </Principal>
+      <Dependent Role="tblSubjectEmployeeMapping">
+        <PropertyRef Name="SubjectId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_tblTaskMaster_tblSubjectMaster">
+    <End Role="tblSubjectMaster" Type="TutDBModel.tblSubjectMaster" Multiplicity="0..1" />
+    <End Role="tblTaskMaster" Type="TutDBModel.tblTaskMaster" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="tblSubjectMaster">
+        <PropertyRef Name="SubjectId" />
+      </Principal>
+      <Dependent Role="tblTaskMaster">
+        <PropertyRef Name="TaskAgainstId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+</Schema>

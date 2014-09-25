@@ -1,0 +1,408 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="TutDBModelStoreContainer" CdmEntityContainer="TutDBEntities">
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="TutDBModel.sysdiagram">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBasicMasters">
+      <EntityTypeMapping TypeName="TutDBModel.tblBasicMaster">
+        <MappingFragment StoreEntitySet="tblBasicMaster">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="Value" ColumnName="Value" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBatchCourses">
+      <EntityTypeMapping TypeName="TutDBModel.tblBatchCourse">
+        <MappingFragment StoreEntitySet="tblBatchCourse">
+          <ScalarProperty Name="BatchCourseId" ColumnName="BatchCourseId" />
+          <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+          <ScalarProperty Name="BatchId" ColumnName="BatchId" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblBatchMasters">
+      <EntityTypeMapping TypeName="TutDBModel.tblBatchMaster">
+        <MappingFragment StoreEntitySet="tblBatchMaster">
+          <ScalarProperty Name="BatchId" ColumnName="BatchId" />
+          <ScalarProperty Name="BatchCode" ColumnName="BatchCode" />
+          <ScalarProperty Name="BatchName" ColumnName="BatchName" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCityMasters">
+      <EntityTypeMapping TypeName="TutDBModel.tblCityMaster">
+        <MappingFragment StoreEntitySet="tblCityMaster">
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="CityName" ColumnName="CityName" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCourseMasters">
+      <EntityTypeMapping TypeName="TutDBModel.tblCourseMaster">
+        <MappingFragment StoreEntitySet="tblCourseMaster">
+          <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+          <ScalarProperty Name="CourseCode" ColumnName="CourseCode" />
+          <ScalarProperty Name="CourseName" ColumnName="CourseName" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblCourseSubjectMappings">
+      <EntityTypeMapping TypeName="TutDBModel.tblCourseSubjectMapping">
+        <MappingFragment StoreEntitySet="tblCourseSubjectMapping">
+          <ScalarProperty Name="CourseMapId" ColumnName="CourseMapId" />
+          <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+          <ScalarProperty Name="SubjectId" ColumnName="SubjectId" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblEmployeeDetails">
+      <EntityTypeMapping TypeName="TutDBModel.tblEmployeeDetail">
+        <MappingFragment StoreEntitySet="tblEmployeeDetails">
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+          <ScalarProperty Name="EmployeeCode" ColumnName="EmployeeCode" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+          <ScalarProperty Name="MotherName" ColumnName="MotherName" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="ResiContacts" ColumnName="ResiContacts" />
+          <ScalarProperty Name="Contacts" ColumnName="Contacts" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="Dpic" ColumnName="Dpic" />
+          <ScalarProperty Name="Designation" ColumnName="Designation" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="Qualificaton" ColumnName="Qualificaton" />
+          <ScalarProperty Name="JoiningDate" ColumnName="JoiningDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblFeesDetails">
+      <EntityTypeMapping TypeName="TutDBModel.tblFeesDetail">
+        <MappingFragment StoreEntitySet="tblFeesDetails">
+          <ScalarProperty Name="RecordId" ColumnName="RecordId" />
+          <ScalarProperty Name="FeeReceiptNo" ColumnName="FeeReceiptNo" />
+          <ScalarProperty Name="AllocationId" ColumnName="AllocationId" />
+          <ScalarProperty Name="AmountToBePaid" ColumnName="AmountToBePaid" />
+          <ScalarProperty Name="AmountPaid" ColumnName="AmountPaid" />
+          <ScalarProperty Name="ActualFees" ColumnName="ActualFees" />
+          <ScalarProperty Name="ServiceTax" ColumnName="ServiceTax" />
+          <ScalarProperty Name="OtherTax" ColumnName="OtherTax" />
+          <ScalarProperty Name="PaidTimeStamp" ColumnName="PaidTimeStamp" />
+          <ScalarProperty Name="Balance" ColumnName="Balance" />
+          <ScalarProperty Name="Advance" ColumnName="Advance" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblFeesMasters">
+      <EntityTypeMapping TypeName="TutDBModel.tblFeesMaster">
+        <MappingFragment StoreEntitySet="tblFeesMaster">
+          <ScalarProperty Name="FeeRecordId" ColumnName="FeeRecordId" />
+          <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+          <ScalarProperty Name="Amount" ColumnName="Amount" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblFeeStructures">
+      <EntityTypeMapping TypeName="TutDBModel.tblFeeStructure">
+        <MappingFragment StoreEntitySet="tblFeeStructure">
+          <ScalarProperty Name="FeeStructId" ColumnName="FeeStructId" />
+          <ScalarProperty Name="AllocationId" ColumnName="AllocationId" />
+          <ScalarProperty Name="InstallmentNo" ColumnName="InstallmentNo" />
+          <ScalarProperty Name="InstallmentAmount" ColumnName="InstallmentAmount" />
+          <ScalarProperty Name="InstallmentDate" ColumnName="InstallmentDate" />
+          <ScalarProperty Name="AmountRemaining" ColumnName="AmountRemaining" />
+          <ScalarProperty Name="PaidStatus" ColumnName="PaidStatus" />
+          <ScalarProperty Name="PaidDate" ColumnName="PaidDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblGenderMasters">
+      <EntityTypeMapping TypeName="TutDBModel.tblGenderMaster">
+        <MappingFragment StoreEntitySet="tblGenderMaster">
+          <ScalarProperty Name="GenderId" ColumnName="GenderId" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblLocationMasters">
+      <EntityTypeMapping TypeName="TutDBModel.tblLocationMaster">
+        <MappingFragment StoreEntitySet="tblLocationMaster">
+          <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+          <ScalarProperty Name="LocationCode" ColumnName="LocationCode" />
+          <ScalarProperty Name="LocationName" ColumnName="LocationName" />
+          <ScalarProperty Name="LocationDescription" ColumnName="LocationDescription" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblLocationRoomMappings">
+      <EntityTypeMapping TypeName="TutDBModel.tblLocationRoomMapping">
+        <MappingFragment StoreEntitySet="tblLocationRoomMapping">
+          <ScalarProperty Name="LocationRoomId" ColumnName="LocationRoomId" />
+          <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+          <ScalarProperty Name="RoomId" ColumnName="RoomId" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblRoomMasters">
+      <EntityTypeMapping TypeName="TutDBModel.tblRoomMaster">
+        <MappingFragment StoreEntitySet="tblRoomMaster">
+          <ScalarProperty Name="RoomId" ColumnName="RoomId" />
+          <ScalarProperty Name="RoomName" ColumnName="RoomName" />
+          <ScalarProperty Name="RoomDescription" ColumnName="RoomDescription" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSessionActivities">
+      <EntityTypeMapping TypeName="TutDBModel.tblSessionActivity">
+        <MappingFragment StoreEntitySet="tblSessionActivity">
+          <ScalarProperty Name="SessionActivityId" ColumnName="SessionActivityId" />
+          <ScalarProperty Name="SessionId" ColumnName="SessionId" />
+          <ScalarProperty Name="TaskId" ColumnName="TaskId" />
+          <ScalarProperty Name="SessionDate" ColumnName="SessionDate" />
+          <ScalarProperty Name="StartTime" ColumnName="StartTime" />
+          <ScalarProperty Name="EndTime" ColumnName="EndTime" />
+          <ScalarProperty Name="SessionDuration" ColumnName="SessionDuration" />
+          <ScalarProperty Name="LocationId" ColumnName="LocationId" />
+          <ScalarProperty Name="RoomId" ColumnName="RoomId" />
+          <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+          <ScalarProperty Name="BatchId" ColumnName="BatchId" />
+          <ScalarProperty Name="SubjectId" ColumnName="SubjectId" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="isCompleted" ColumnName="isCompleted" />
+          <ScalarProperty Name="ActivityStatus" ColumnName="ActivityStatus" />
+          <ScalarProperty Name="AttendanceRecorded" ColumnName="AttendanceRecorded" />
+          <ScalarProperty Name="Comments" ColumnName="Comments" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSessionMasters">
+      <EntityTypeMapping TypeName="TutDBModel.tblSessionMaster">
+        <MappingFragment StoreEntitySet="tblSessionMaster">
+          <ScalarProperty Name="SessionId" ColumnName="SessionId" />
+          <ScalarProperty Name="SessionCode" ColumnName="SessionCode" />
+          <ScalarProperty Name="SessionOwnerId" ColumnName="SessionOwnerId" />
+          <ScalarProperty Name="SessionDescription" ColumnName="SessionDescription" />
+          <ScalarProperty Name="SessionTime" ColumnName="SessionTime" />
+          <ScalarProperty Name="SessionOccurances" ColumnName="SessionOccurances" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblStaffAttendances">
+      <EntityTypeMapping TypeName="TutDBModel.tblStaffAttendance">
+        <MappingFragment StoreEntitySet="tblStaffAttendance">
+          <ScalarProperty Name="StaffAttendanceId" ColumnName="StaffAttendanceId" />
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+          <ScalarProperty Name="SessionActivityId" ColumnName="SessionActivityId" />
+          <ScalarProperty Name="EnteredDate" ColumnName="EnteredDate" />
+          <ScalarProperty Name="AttendanceDate" ColumnName="AttendanceDate" />
+          <ScalarProperty Name="isPresent" ColumnName="isPresent" />
+          <ScalarProperty Name="LeaveReason" ColumnName="LeaveReason" />
+          <ScalarProperty Name="Reviewed" ColumnName="Reviewed" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblStudentAllocations">
+      <EntityTypeMapping TypeName="TutDBModel.tblStudentAllocation">
+        <MappingFragment StoreEntitySet="tblStudentAllocation">
+          <ScalarProperty Name="AllocationId" ColumnName="AllocationId" />
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="CourseId" ColumnName="CourseId" />
+          <ScalarProperty Name="BatchId" ColumnName="BatchId" />
+          <ScalarProperty Name="StartDate" ColumnName="StartDate" />
+          <ScalarProperty Name="EndDate" ColumnName="EndDate" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="isOver" ColumnName="isOver" />
+          <ScalarProperty Name="LastQualification" ColumnName="LastQualification" />
+          <ScalarProperty Name="LastQualificationScore" ColumnName="LastQualificationScore" />
+          <ScalarProperty Name="AdmitDate" ColumnName="AdmitDate" />
+          <ScalarProperty Name="Fees" ColumnName="Fees" />
+          <ScalarProperty Name="Discount" ColumnName="Discount" />
+          <ScalarProperty Name="ActualFees" ColumnName="ActualFees" />
+          <ScalarProperty Name="Deposit" ColumnName="Deposit" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblStudentAttendances">
+      <EntityTypeMapping TypeName="TutDBModel.tblStudentAttendance">
+        <MappingFragment StoreEntitySet="tblStudentAttendance">
+          <ScalarProperty Name="StudentAttendanceId" ColumnName="StudentAttendanceId" />
+          <ScalarProperty Name="SessionActivityId" ColumnName="SessionActivityId" />
+          <ScalarProperty Name="AllocationId" ColumnName="AllocationId" />
+          <ScalarProperty Name="EnteredDate" ColumnName="EnteredDate" />
+          <ScalarProperty Name="AttendanceDate" ColumnName="AttendanceDate" />
+          <ScalarProperty Name="isPresent" ColumnName="isPresent" />
+          <ScalarProperty Name="LeaveReason" ColumnName="LeaveReason" />
+          <ScalarProperty Name="Reviewed" ColumnName="Reviewed" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblStudentDetails">
+      <EntityTypeMapping TypeName="TutDBModel.tblStudentDetail">
+        <MappingFragment StoreEntitySet="tblStudentDetails">
+          <ScalarProperty Name="StudentId" ColumnName="StudentId" />
+          <ScalarProperty Name="FirstName" ColumnName="FirstName" />
+          <ScalarProperty Name="MiddleName" ColumnName="MiddleName" />
+          <ScalarProperty Name="LastName" ColumnName="LastName" />
+          <ScalarProperty Name="FatherName" ColumnName="FatherName" />
+          <ScalarProperty Name="MotherName" ColumnName="MotherName" />
+          <ScalarProperty Name="DOB" ColumnName="DOB" />
+          <ScalarProperty Name="Sex" ColumnName="Sex" />
+          <ScalarProperty Name="Address1" ColumnName="Address1" />
+          <ScalarProperty Name="Address2" ColumnName="Address2" />
+          <ScalarProperty Name="CityId" ColumnName="CityId" />
+          <ScalarProperty Name="Dpic" ColumnName="Dpic" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="AdmitDate" ColumnName="AdmitDate" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+          <ScalarProperty Name="FatherContacts" ColumnName="FatherContacts" />
+          <ScalarProperty Name="MotherContacts" ColumnName="MotherContacts" />
+          <ScalarProperty Name="ResiContacts" ColumnName="ResiContacts" />
+          <ScalarProperty Name="Contacts" ColumnName="Contacts" />
+          <ScalarProperty Name="Email" ColumnName="Email" />
+          <ScalarProperty Name="StudentCode" ColumnName="StudentCode" />
+          <ScalarProperty Name="LastQualificatiion" ColumnName="LastQualificatiion" />
+          <ScalarProperty Name="LastQualificationScore" ColumnName="LastQualificationScore" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSubjectEmployeeMappings">
+      <EntityTypeMapping TypeName="TutDBModel.tblSubjectEmployeeMapping">
+        <MappingFragment StoreEntitySet="tblSubjectEmployeeMapping">
+          <ScalarProperty Name="SubjectMapId" ColumnName="SubjectMapId" />
+          <ScalarProperty Name="EmployeeId" ColumnName="EmployeeId" />
+          <ScalarProperty Name="SubjectId" ColumnName="SubjectId" />
+          <ScalarProperty Name="isActvie" ColumnName="isActvie" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblSubjectMasters">
+      <EntityTypeMapping TypeName="TutDBModel.tblSubjectMaster">
+        <MappingFragment StoreEntitySet="tblSubjectMaster">
+          <ScalarProperty Name="SubjectId" ColumnName="SubjectId" />
+          <ScalarProperty Name="SubjectName" ColumnName="SubjectName" />
+          <ScalarProperty Name="Description" ColumnName="Description" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="tblTaskMasters">
+      <EntityTypeMapping TypeName="TutDBModel.tblTaskMaster">
+        <MappingFragment StoreEntitySet="tblTaskMaster">
+          <ScalarProperty Name="TaskId" ColumnName="TaskId" />
+          <ScalarProperty Name="TaskCode" ColumnName="TaskCode" />
+          <ScalarProperty Name="TaskName" ColumnName="TaskName" />
+          <ScalarProperty Name="TaskDescription" ColumnName="TaskDescription" />
+          <ScalarProperty Name="isActive" ColumnName="isActive" />
+          <ScalarProperty Name="TaskAgainstId" ColumnName="TaskAgainstId" />
+          <ScalarProperty Name="EstimatedTime" ColumnName="EstimatedTime" />
+          <ScalarProperty Name="ActualTime" ColumnName="ActualTime" />
+          <ScalarProperty Name="CreatedDate" ColumnName="CreatedDate" />
+          <ScalarProperty Name="UpdatedDate" ColumnName="UpdatedDate" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="TutDBModel.Store.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="TutDBModel.Store.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_createInstallment" FunctionName="TutDBModel.Store.sp_createInstallment" />
+    <FunctionImportMapping FunctionImportName="sp_createSessionActivityAlternate" FunctionName="TutDBModel.Store.sp_createSessionActivityAlternate" />
+    <FunctionImportMapping FunctionImportName="sp_createSessionActivityAlternateExceptSundays" FunctionName="TutDBModel.Store.sp_createSessionActivityAlternateExceptSundays" />
+    <FunctionImportMapping FunctionImportName="sp_createSessionActivityDaily" FunctionName="TutDBModel.Store.sp_createSessionActivityDaily" />
+    <FunctionImportMapping FunctionImportName="sp_createSessionActivityDailyExceptSunday" FunctionName="TutDBModel.Store.sp_createSessionActivityDailyExceptSunday" />
+    <FunctionImportMapping FunctionImportName="sp_createSessionActivityMonthly" FunctionName="TutDBModel.Store.sp_createSessionActivityMonthly" />
+    <FunctionImportMapping FunctionImportName="sp_createSessionActivityWeekly" FunctionName="TutDBModel.Store.sp_createSessionActivityWeekly" />
+    <FunctionImportMapping FunctionImportName="sp_createSessionActivityWeeklyExceptSunday" FunctionName="TutDBModel.Store.sp_createSessionActivityWeeklyExceptSunday" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="TutDBModel.Store.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="TutDBModel.Store.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TutDBModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="TutDBModel.Store.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="TutDBModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="TutDBModel.Store.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="TutDBModel.Store.sp_upgraddiagrams" />
+  </EntityContainerMapping>
+</Mapping>
